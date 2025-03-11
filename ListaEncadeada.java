@@ -21,4 +21,15 @@ public class ListaEncadeada {
         }
         tamanho++;
     }
+
+    public void inserirNoFim(int elemento) {
+        No novoNo = new No(elemento);
+        if(tamanho == 0) {
+            cabeca = cauda = novoNo;
+        } else {
+            cauda.setProximo(novoNo);
+            cauda = novoNo;
+        }
+        tamanho++;
+    }
 }
