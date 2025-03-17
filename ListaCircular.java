@@ -10,6 +10,14 @@ public class ListaCircular {
 
     public void inserir(int elemento) {
         No novoNo = new No(elemento);
+        if(cursor == null) {
+            novoNo = proximo = novoNo;
+            cursor = novoNo
+        } else {
+            novoNo.proximo = cursor.proximo;
+            cursor = novoNo;
+        }
+        tamanho--;
     }
 
     public boolean estarVazio() {
