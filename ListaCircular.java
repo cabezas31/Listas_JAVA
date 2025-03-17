@@ -21,7 +21,7 @@ public class ListaCircular {
     }
 
     public void remove() {
-        if(estarVazio) {
+        if(estarVazio()) {
             throw new IllegalStateException("lista vazia")
         } if(cursor.proximo == cursor) {
                 cursor = null;
@@ -33,5 +33,21 @@ public class ListaCircular {
 
     public boolean estarVazio() {
         return tamanho == 0;
+    }
+
+    public int pegaElemento() {
+        if(estarVazio()) {
+            throw new IllegalStateException("lista vazia");
+        }
+        return cursor.proximo.elemento;
+    }
+
+    public void avanca() {
+        if(estarVazio()!) {
+            cursor = cursor.proximo;
+        }
+    }
+    public int tamanho() {
+        return tamanho;
     }
 }
