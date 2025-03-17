@@ -20,6 +20,17 @@ public class ListaCircular {
         tamanho--;
     }
 
+    public void remove() {
+        if(estarVazio) {
+            throw new IllegalStateException("lista vazia")
+        } if(cursor.proximo == cursor) {
+                cursor = null;
+        } else {
+            cursor.proximo = cursor.proximo.proximo;
+        }
+        tamanho--;
+    }
+
     public boolean estarVazio() {
         return tamanho == 0;
     }
